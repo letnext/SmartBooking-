@@ -1,0 +1,272 @@
+/* PAGE BACKGROUND */
+.patient-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2ff, #c7d2fe);
+  padding: 20px;
+}
+
+.patient-wrapper {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* HEADER */
+.patient-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.header-icon {
+  background: #4f46e5;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(79, 70, 229, 0.3);
+}
+
+.patient-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.patient-header p {
+  margin-top: 4px;
+  color: #64748b;
+}
+
+/* STATS GRID */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.stat-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.stat-label {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.stat-value {
+  font-size: 26px;
+  font-weight: bold;
+  color: #1e293b;
+}
+
+/* SEARCH BAR */
+.search-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 22px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.search-input-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 12px 10px 38px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  font-size: 15px;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f1f5f9;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.filter-btn:hover {
+  background: #e2e8f0;
+}
+
+/* PATIENT GRID */
+.patients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+/* PATIENT CARD */
+.patient-card {
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: 0.3s;
+  animation: fadeUp 0.4s ease forwards;
+}
+
+.patient-card:hover {
+  box-shadow: 0 8px 16px rgba(79, 70, 229, 0.15);
+  border-color: #c7d2fe;
+}
+
+.card-inner {
+  padding: 20px;
+  text-align: center;
+}
+
+.patient-avatar {
+  width: 56px;
+  height: 56px;
+  margin: auto;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.patient-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-top: 8px;
+}
+
+.patient-id {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* CONTACT ROWS */
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0;
+  color: #475569;
+}
+
+.info-icon {
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.info-icon.email {
+  background: #eff6ff;
+  color: #3b82f6;
+}
+
+.info-icon.phone {
+  background: #ecfdf5;
+  color: #10b981;
+}
+
+/* VIEW BUTTON */
+.view-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  border: none;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.view-btn:hover {
+  background: #6366f1;
+  color: white;
+}
+
+/* EMPTY STATE */
+.no-patient {
+  text-align: center;
+  padding: 40px;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+}
+
+.no-icon {
+  background: #f1f5f9;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-patient h3 {
+  font-size: 20px;
+  margin: 12px 0;
+  color: #334155;
+}
+
+/* LOADING */
+.patient-loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #ddd;
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

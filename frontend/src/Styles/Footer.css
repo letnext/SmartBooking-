@@ -1,0 +1,185 @@
+/* Professional Hospital Footer - Clean, aligned layout */
+
+.footer-hospital {
+  background: #f9fbff;
+  color: #111827;
+  padding: 56px 20px 28px;
+  border-top: 4px solid #1a5cff;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* container */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* grid: 4 columns on desktop, collapses responsively */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr; /* hospital-col slightly wider */
+  gap: 28px 36px;
+  align-items: start; /* align column tops */
+  margin-bottom: 28px;
+}
+
+/* every column section */
+.footer-section {
+  display: block;
+  text-align: left; /* important: left-align content for readability */
+}
+
+/* logo/title */
+.footer-logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1a5cff;
+  margin: 0 0 8px 0;
+  display: inline-block;
+}
+
+.footer-tagline {
+  color: #374151;
+  font-size: 14px;
+  margin: 0 0 14px 0;
+  line-height: 1.4;
+}
+
+/* contact list */
+.footer-contact p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #334155;
+}
+
+/* certifications */
+.footer-certifications {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.footer-certifications span {
+  font-size: 12px;
+  color: #1a5cff;
+  border: 1px solid rgba(26,92,255,0.12);
+  background: rgba(26,92,255,0.05);
+  padding: 6px 10px;
+  border-radius: 16px;
+}
+
+/* section headings */
+.footer-section h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 10px 0;
+}
+
+/* quick links */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+.footer-section ul li a {
+  color: #334155;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.16s ease;
+}
+.footer-section ul li a:hover {
+  color: #1a5cff;
+}
+
+/* timings */
+.footer-section.timings ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 8px;
+  padding: 8px 10px;
+  background: #f1f5ff;
+  border-radius: 6px;
+  color: #1f2937;
+}
+.footer-section.timings ul li.emergency {
+  background: #fff1f2;
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+/* social links */
+.social-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.social-links a {
+  color: #334155;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease;
+}
+.social-links a:hover {
+  background: rgba(26,92,255,0.08);
+  color: #1a5cff;
+  transform: translateY(-3px);
+}
+
+/* divider */
+.footer-divider {
+  border: none;
+  border-top: 1px solid #e6e9f2;
+  margin: 18px 0;
+}
+
+/* bottom bar */
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6b7280;
+  font-size: 13px;
+  gap: 12px;
+  padding-bottom: 6px;
+  text-align: center;
+}
+
+/* responsive breakpoints */
+
+/* medium screens: 2 columns */
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .footer-logo { font-size: 20px; }
+}
+
+/* small screens: single column, centered content */
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .footer-section {
+    text-align: center;
+  }
+  .footer-contact p,
+  .footer-section ul li,
+  .footer-section.timings ul li {
+    justify-content: center;
+  }
+  .footer-certifications { justify-content: center; }
+  .social-links { justify-content: center; }
+  .footer-bottom { flex-direction: column; padding-top: 8px; }
+}

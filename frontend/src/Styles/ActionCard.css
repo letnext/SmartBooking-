@@ -1,0 +1,61 @@
+.action-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.action-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.action-card .icon {
+  font-size: 32px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f2f5;
+  border-radius: 8px;
+}
+
+.action-card .details {
+  flex: 1;
+}
+
+.action-card h3 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+}
+
+.action-card p {
+  margin: 0;
+  color: #777;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .action-card {
+    padding: 15px;
+  }
+
+  .action-card .icon {
+    font-size: 28px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .action-card h3 {
+    font-size: 16px;
+  }
+}
