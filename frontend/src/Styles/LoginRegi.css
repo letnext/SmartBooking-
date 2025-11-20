@@ -1,10 +1,10 @@
 /* Page Background */
 .register-page {
-  /* min-height: 100vh; */
+  
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+ 
   padding: 20px;
 }
 
@@ -48,6 +48,7 @@
   outline: none;
   transition: 0.3s ease;
   box-sizing: border-box;
+  margin-bottom: 15px;
 }
 
 .login-container input:focus {
@@ -171,3 +172,14 @@
   }
 }
 
+.input-error {
+  border: 1px solid rgb(255, 10, 10) !important;
+}
+
+.login-container span{
+  color: #503ce7;
+  font-size: 0.85rem;
+  margin-top: 0px;
+  display: block;
+  cursor: pointer;
+}

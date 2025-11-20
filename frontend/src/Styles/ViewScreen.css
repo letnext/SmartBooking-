@@ -10,7 +10,7 @@
   --primary-dark: #5568d3;
   --secondary: #764ba2;
   --accent: #f093fb;
-  --text-dark: #1a1a2e;
+  /* --text-dark: #1a1a2e; */
   --text-gray: #6b7280;
   --bg-light: #f8fafc;
   --bg-white: #ffffff;
@@ -46,12 +46,13 @@ body {
   z-index: 100;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
+  margin-top: 24px;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   cursor: pointer;
 }
 
@@ -133,7 +134,13 @@ body {
   margin-bottom: 24px;
   letter-spacing: -1.5px;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  
 }
+
+.hero-title {
+  color: #ffffff !important;
+}
+
 
 .gradient-text {
   background: linear-gradient(135deg, #fff 0%, #f093fb 100%);

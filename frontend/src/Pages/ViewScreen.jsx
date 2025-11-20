@@ -448,47 +448,7 @@ const ViewScreen = () => {
         </div>
       </motion.section>
 
-      {/* Footer */}
-      {/* <footer className="footer">
-        <div className="footer-content">
-          <motion.div 
-            className="footer-left"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h3>HealthConnect</h3>
-            <p>
-              123 Wellness Street, Chennai, India <br />
-              📞 +91 98765 43210 <br />
-              ✉️ support@healthconnect.com
-            </p>
-          </motion.div>
-          <motion.div 
-            className="footer-right"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h4>Follow Us</h4>
-            <div className="social-links">
-              <a href="#">🌐 Facebook</a>
-              <a href="#">📸 Instagram</a>
-              <a href="#">🐦 Twitter</a>
-            </div>
-          </motion.div>
-        </div>
-        <motion.button
-          className="back-to-top"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          ↑ Back to Top
-        </motion.button>
-      </footer> */}
+      
 
       {/* Modal Overlay */}
       {showModal && (
