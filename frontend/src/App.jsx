@@ -12,8 +12,8 @@ import AddDoctors from "./Pages/AddDoctor.jsx";
 import DoctorList from "./Pages/DoctorList.jsx";
 import PatientList from "./Pages/PatientList.jsx";
 
-
-const API_BASE = "http://localhost:5001/api";
+const API_BASE = import.meta.env.VITE_BASE_URL;
+// const API_BASE = "http://localhost:5001/api";
 
 // ✅ Wrapper to control Navbar visibility
 const AppContent = () => {
@@ -50,7 +50,7 @@ const AppContent = () => {
   // 🔹 Fetch patients from API
   const fetchPatients = async () => {
     try {
-      const res = await fetch(`${API_BASE}/auth/getAll`, {
+      const res = await fetch(`${API_BASE}/api/auth/getAll`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       });
@@ -82,7 +82,7 @@ const AppContent = () => {
   // ✅ Fetch doctors from backend API
   const fetchDoctors = async () => {
     try {
-      const res = await fetch(`${API_BASE}/doctors/getting-all`);
+      const res = await fetch(`${API_BASE}/api/doctors/getting-all`);
       if (!res.ok) throw new Error("Failed to fetch doctors");
       const data = await res.json();
       setDoctors(data);

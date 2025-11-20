@@ -6,6 +6,7 @@ const MyAppointments = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+  const API_BASE = import.meta.env.VITE_BASE_URL;
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
@@ -22,7 +23,7 @@ const MyAppointments = () => {
 
         // 🔹 Step 2: Make the API call
         
-        const res = await fetch("http://localhost:5001/api/appointments/my", {
+        const res = await fetch(`${API_BASE}/api/appointments/my`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

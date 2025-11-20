@@ -12,8 +12,8 @@ const Dashboard = ({ doctors }) => {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
-
-  const API_BASE = "http://localhost:5001/api/appointments";
+  const API_BASE = import.meta.env.VITE_BASE_URL;
+  // const API_BASE = "http://localhost:5001/api/appointments";
 
   // Load logged-in user
   useEffect(() => {
@@ -53,7 +53,7 @@ const Dashboard = ({ doctors }) => {
         return;
       }
 
-      // FIX: Map categories correctly
+      // FIX: Map categories correctly 
       const bookingData = {
         doctorName: selectedDoctor.name,
         category:
@@ -66,7 +66,7 @@ const Dashboard = ({ doctors }) => {
          userEmail: user.email 
       };
  console.log(bookingData.userEmail);
-      const res = await fetch(`${API_BASE}/create`, {
+      const res = await fetch(`${API_BASE}/api/appointments/create`, { 
         method: "POST",
         headers: {
           "Content-Type": "application/json",

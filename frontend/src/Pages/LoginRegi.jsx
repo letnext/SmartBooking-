@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Styles/LoginRegi.css";
 
-const API_BASE = "http://localhost:5001/api/auth";
+const API_BASE = import.meta.env.VITE_BASE_URL;
 
 const LoginRegi = () => {
   const navigate = useNavigate();
@@ -38,11 +38,11 @@ const LoginRegi = () => {
 
     setRegisterErrors(errors);
 
-    // ❌ Stop submission if any empty
+    // ❌ Stop submission if any empty 
     if (Object.keys(errors).length > 0) return;
 
     try {
-      const res = await fetch(`${API_BASE}/register`, {
+      const res = await fetch(`${API_BASE}/api/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(registerData),
@@ -92,7 +92,7 @@ const LoginRegi = () => {
     if (Object.keys(errors).length > 0) return;
 
     try {
-      const res = await fetch(`${API_BASE}/login`, {
+      const res = await fetch(`${API_BASE}/api/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(loginData),
@@ -101,7 +101,9 @@ const LoginRegi = () => {
       const data = await res.json();
 
       if (!res.ok) {
-        setLoginErrors({ general: data.message || "Invalid email or password." });
+        setLoginErrors({
+          general: data.message || "Invalid email or password.",
+        });
         return;
       }
 
@@ -148,7 +150,10 @@ const LoginRegi = () => {
               className={registerErrors.phoneNumber ? "input-error" : ""}
               value={registerData.phoneNumber}
               onChange={(e) => {
-                setRegisterData({ ...registerData, phoneNumber: e.target.value });
+                setRegisterData({
+                  ...registerData,
+                  phoneNumber: e.target.value,
+                });
                 setRegisterErrors({ ...registerErrors, phoneNumber: false });
               }}
             />
@@ -185,13 +190,18 @@ const LoginRegi = () => {
                   ...registerData,
                   confirmPassword: e.target.value,
                 });
-                setRegisterErrors({ ...registerErrors, confirmPassword: false });
+                setRegisterErrors({
+                  ...registerErrors,
+                  confirmPassword: false,
+                });
               }}
             />
 
             <button type="submit">Register</button>
 
-            <p onClick={() => setActiveTab("login")}>Already have an account? <span>Login</span></p>
+            <p onClick={() => setActiveTab("login")}>
+              Already have an account? <span>Login</span>
+            </p>
           </form>
         ) : (
           <form onSubmit={handleLogin}>

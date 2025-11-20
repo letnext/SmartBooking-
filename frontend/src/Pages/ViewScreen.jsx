@@ -4,10 +4,9 @@ import "../Styles/ViewScreen.css";
 import LoginRegi from "./LoginRegi.jsx";
 import Footer from "../Components/Footer.jsx";
 
-
 const FAQItem = ({ question, answer, index }) => {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   return (
     <motion.div
       className="faq-item"
@@ -18,7 +17,7 @@ const FAQItem = ({ question, answer, index }) => {
     >
       <div className="faq-question" onClick={() => setIsOpen(!isOpen)}>
         <h4>{question}</h4>
-        <motion.span 
+        <motion.span
           className="faq-toggle"
           animate={{ rotate: isOpen ? 45 : 0 }}
           transition={{ duration: 0.3 }}
@@ -29,11 +28,11 @@ const FAQItem = ({ question, answer, index }) => {
       <motion.div
         className="faq-answer"
         initial={false}
-        animate={{ 
-          height: isOpen ? "auto" : 0, 
+        animate={{
+          height: isOpen ? "auto" : 0,
           opacity: isOpen ? 1 : 0,
           paddingTop: isOpen ? "16px" : 0,
-          paddingBottom: isOpen ? "16px" : 0
+          paddingBottom: isOpen ? "16px" : 0,
         }}
         transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
       >
@@ -52,18 +51,18 @@ const ViewScreen = () => {
   const handleOpen = (type) => {
     setModalType(type);
     setShowModal(true);
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   };
 
   const handleClose = () => {
     setShowModal(false);
     setModalType("");
-    document.body.style.overflow = 'unset';
+    document.body.style.overflow = "unset";
   };
 
   useEffect(() => {
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, []);
 
@@ -72,25 +71,25 @@ const ViewScreen = () => {
       img: "../../public/heart.gif",
       title: "Cardiology",
       desc: "Heart checkups and treatments from experienced specialists.",
-      color: "#FF6B6B"
+      color: "#FF6B6B",
     },
     {
       img: "../../public/dentist_16060053.gif",
       title: "Dental Care",
       desc: "Keep your smile bright and healthy with expert dental services.",
-      color: "#4ECDC4"
+      color: "#4ECDC4",
     },
     {
       img: "../../public/nerve-cell_17275928.gif",
       title: "Neurology",
       desc: "Advanced brain and nerve diagnostics and treatments.",
-      color: "#A78BFA"
+      color: "#A78BFA",
     },
     {
       img: "../../public/safe-children_17093485.gif",
       title: "Pediatrics",
       desc: "Gentle, specialized care for infants, toddlers, and teens.",
-      color: "#FFA07A"
+      color: "#FFA07A",
     },
   ];
 
@@ -99,19 +98,19 @@ const ViewScreen = () => {
       img: "../../public/dr2.png",
       name: "Dr. Anita Sharma",
       spec: "Cardiologist",
-      experience: "15+ Years"
+      experience: "15+ Years",
     },
     {
       img: "../../public/dr1.png",
       name: "Dr. Rajesh Verma",
       spec: "Neurologist",
-      experience: "12+ Years"
+      experience: "12+ Years",
     },
     {
       img: "../../public/dr3.png",
       name: "Dr. Meera Patel",
       spec: "Pediatrician",
-      experience: "10+ Years"
+      experience: "10+ Years",
     },
   ];
 
@@ -119,36 +118,40 @@ const ViewScreen = () => {
     {
       text: "The appointment booking was super quick, and the doctor was really kind. Highly recommend!",
       name: "Riya Kapoor",
-      rating: 5
+      rating: 5,
     },
     {
       text: "A seamless experience. Got an appointment in minutes and received excellent care.",
       name: "Arun Mehta",
-      rating: 5
+      rating: 5,
     },
     {
       text: "Love the interface and fast confirmation system. Doctors are top quality here!",
       name: "Sneha Iyer",
-      rating: 5
+      rating: 5,
     },
   ];
 
   const faqs = [
     {
       question: "How do I book an appointment?",
-      answer: "Simply click on 'Book an Appointment', register or login, select your doctor, date, and confirm your booking instantly."
+      answer:
+        "Simply click on 'Book an Appointment', register or login, select your doctor, date, and confirm your booking instantly.",
     },
     {
       question: "Can I cancel or reschedule an appointment?",
-      answer: "Yes, you can easily cancel or reschedule from your dashboard within 24 hours of booking."
+      answer:
+        "Yes, you can easily cancel or reschedule from your dashboard within 24 hours of booking.",
     },
     {
       question: "Is there any consultation fee?",
-      answer: "Consultation fees vary depending on the doctor and department. You can view the fee before confirming."
+      answer:
+        "Consultation fees vary depending on the doctor and department. You can view the fee before confirming.",
     },
     {
       question: "Do I get appointment reminders?",
-      answer: "Absolutely! We send both email and SMS reminders to ensure you never miss your appointment."
+      answer:
+        "Absolutely! We send both email and SMS reminders to ensure you never miss your appointment.",
     },
   ];
 
@@ -162,7 +165,7 @@ const ViewScreen = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.6, 0.05, 0.01, 0.9] }}
       >
-        <motion.div 
+        <motion.div
           className="logo"
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3 }}
@@ -170,7 +173,12 @@ const ViewScreen = () => {
           <div className="logo-icon">
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
               <circle cx="20" cy="20" r="18" fill="url(#gradient)" />
-              <path d="M20 12v16M12 20h16" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+              <path
+                d="M20 12v16M12 20h16"
+                stroke="white"
+                strokeWidth="3"
+                strokeLinecap="round"
+              />
               <defs>
                 <linearGradient id="gradient" x1="0" y1="0" x2="40" y2="40">
                   <stop offset="0%" stopColor="#667eea" />
@@ -197,7 +205,6 @@ const ViewScreen = () => {
             title="Doctor Background Video"
             frameBorder="0"
             allow="autoplay; fullscreen"
-            allowFullScreen
           ></iframe>
         </div>
 
@@ -209,16 +216,16 @@ const ViewScreen = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <motion.h1 
+          <motion.h1
             className="hero-title"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Book Your Doctor <br /> Appointment <br /> 
+            Book Your Doctor <br /> Appointment <br />
             <span className="gradient-text">Online.</span>
           </motion.h1>
-          <motion.p 
+          <motion.p
             className="hero-subtitle"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -227,7 +234,7 @@ const ViewScreen = () => {
             A Healthier Tomorrow Starts Today — Schedule Your Appointment Now!
           </motion.p>
 
-          <motion.div 
+          <motion.div
             className="hero-buttons"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -236,7 +243,10 @@ const ViewScreen = () => {
             <motion.button
               className="btn-secondary"
               onClick={() => handleOpen("book")}
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(0,0,0,0.2)" }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
+              }}
               whileTap={{ scale: 0.98 }}
             >
               🩺 Book An Appointment
@@ -274,7 +284,7 @@ const ViewScreen = () => {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8 }}
       >
-        <motion.h2 
+        <motion.h2
           className="section-title"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -283,7 +293,7 @@ const ViewScreen = () => {
         >
           How It Works!
         </motion.h2>
-        <motion.p 
+        <motion.p
           className="section-description"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -317,21 +327,21 @@ const ViewScreen = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ 
-                y: -15, 
+              whileHover={{
+                y: -15,
                 boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
-                transition: { duration: 0.3 }
+                transition: { duration: 0.3 },
               }}
             >
-              <div className="service-icon" style={{ backgroundColor: service.color + '20' }}>
-                <img src={service.img} alt={service.title}  className="uniqe"/>
+              <div
+                className="service-icon"
+                style={{ backgroundColor: service.color + "20" }}
+              >
+                <img src={service.img} alt={service.title} className="uniqe" />
               </div>
               <h3>{service.title}</h3>
               <p>{service.desc}</p>
-              <motion.div 
-                className="service-arrow"
-                whileHover={{ x: 5 }}
-              >
+              <motion.div className="service-arrow" whileHover={{ x: 5 }}>
                 →
               </motion.div>
             </motion.div>
@@ -341,31 +351,33 @@ const ViewScreen = () => {
 
       {/* Meet Our Doctors */}
       {/* Meet Our Doctors */}
-<motion.section
-  className="doctors"
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  viewport={{ once: true, amount: 0.2 }}
-  transition={{ duration: 0.8 }}
->
-  <h2 className="section-title">Meet Our Doctors</h2>
-  <p className="section-description">Expert care from experienced professionals</p>
-
-  <div className="doctor-grid">
-    {doctors.map((doc, i) => (
-      <motion.article
-        className="doctor-card"
-        key={i}
-        initial={{ opacity: 0, scale: 0.98 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: i * 0.12 }}
-        whileHover={{ y: -10 }}
+      <motion.section
+        className="doctors"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8 }}
       >
-        <div className="doctor-image-wrapper" aria-hidden="true">
-          <img src={doc.img} alt={doc.name}  />
-          <div className="doctor-overlay">
-            {/* <motion.button
+        <h2 className="section-title">Meet Our Doctors</h2>
+        <p className="section-description">
+          Expert care from experienced professionals
+        </p>
+
+        <div className="doctor-grid">
+          {doctors.map((doc, i) => (
+            <motion.article
+              className="doctor-card"
+              key={i}
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.12 }}
+              whileHover={{ y: -10 }}
+            >
+              <div className="doctor-image-wrapper" aria-hidden="true">
+                <img src={doc.img} alt={doc.name} />
+                <div className="doctor-overlay">
+                  {/* <motion.button
               className="view-profile"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
@@ -373,18 +385,18 @@ const ViewScreen = () => {
             >
               View Profile
             </motion.button> */}
-          </div>
-        </div>
+                </div>
+              </div>
 
-        <div className="doctor-info">
-          <h3 className="doctor-name">{doc.name}</h3>
-          <p className="doctor-spec">{doc.spec}</p>
-          <p className="doctor-exp">{doc.experience}</p>
+              <div className="doctor-info">
+                <h3 className="doctor-name">{doc.name}</h3>
+                <p className="doctor-spec">{doc.spec}</p>
+                <p className="doctor-exp">{doc.experience}</p>
+              </div>
+            </motion.article>
+          ))}
         </div>
-      </motion.article>
-    ))}
-  </div>
-</motion.section>
+      </motion.section>
 
       {/* Testimonials */}
       <motion.section
@@ -395,8 +407,10 @@ const ViewScreen = () => {
         transition={{ duration: 0.8 }}
       >
         <h2 className="section-title">What Our Patients Say</h2>
-        <p className="section-description">Real experiences from real patients</p>
-        
+        <p className="section-description">
+          Real experiences from real patients
+        </p>
+
         <div className="testimonial-grid">
           {testimonials.map((review, i) => (
             <motion.div
@@ -406,10 +420,10 @@ const ViewScreen = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              whileHover={{ 
+              whileHover={{
                 y: -8,
                 boxShadow: "0 15px 35px rgba(0,0,0,0.12)",
-                transition: { duration: 0.3 }
+                transition: { duration: 0.3 },
               }}
             >
               <div className="quote-icon">"</div>
@@ -433,7 +447,8 @@ const ViewScreen = () => {
       >
         <h2 className="section-title">Frequently Asked Questions</h2>
         <p className="section-description">
-          Have questions? We've got answers! Explore the most common queries below.
+          Have questions? We've got answers! Explore the most common queries
+          below.
         </p>
 
         <div className="faq-container">
@@ -448,11 +463,9 @@ const ViewScreen = () => {
         </div>
       </motion.section>
 
-      
-
       {/* Modal Overlay */}
       {showModal && (
-        <motion.div 
+        <motion.div
           className="overlay"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -473,18 +486,20 @@ const ViewScreen = () => {
 
             {modalType === "book" && <LoginRegi />}
             {modalType === "call" && (
-              <motion.div 
+              <motion.div
                 className="call-info"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
                 <h2>📞 Call Us Now</h2>
-                <p>We're here to help you with your appointment and inquiries.</p>
+                <p>
+                  We're here to help you with your appointment and inquiries.
+                </p>
                 <h3 className="phone-number">+91 98765 43210</h3>
                 <p>Available 9:00 AM - 8:00 PM (Mon - Sat)</p>
-                <motion.a 
-                  href="tel:+919876543210" 
+                <motion.a
+                  href="tel:+919876543210"
                   className="call-btn"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}

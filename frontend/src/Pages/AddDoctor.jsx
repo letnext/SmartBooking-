@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "../Styles/AddDoctor.css";
 
-const API_BASE = "http://localhost:5001/api";
+ const API_BASE = import.meta.env.VITE_BASE_URL;
+// const API_BASE = "http://localhost:5001/api";
 
 const AddDoctorModal = ({ onClose }) => {
   const [form, setForm] = useState({
@@ -58,7 +59,7 @@ const AddDoctorModal = ({ onClose }) => {
     setLoading(true);
     
     try {
-      const response = await fetch(`${API_BASE}/doctors/adding`, {
+      const response = await fetch(`${API_BASE}/api/doctors/adding`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
