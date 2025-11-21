@@ -3,6 +3,7 @@ import "../Styles/HospitalDashboard.css";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
+const API_BASE = import.meta.env.VITE_BASE_URL;
 const HospitalDashboard = () => {
   const navigate = useNavigate();
   const [bookings, setBookings] = useState([]);
@@ -20,7 +21,7 @@ const HospitalDashboard = () => {
         return;
       }
 
-      const res = await fetch("http://localhost:5001/api/appointments/get", {
+      const res = await fetch(`${API_BASE}/api/appointments/get`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -52,7 +53,7 @@ const HospitalDashboard = () => {
         return;
       }
 
-      const res = await fetch(`http://localhost:5001/api/appointments/${id}`, {
+      const res = await fetch(`${API_BASE}/api/appointments/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
