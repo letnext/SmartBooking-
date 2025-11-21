@@ -30,7 +30,7 @@ const DoctorList = ({ doctors, error, loading }) => {
               </button>
       <div className="hero-section">
         <div className="hero-content">
-          <h1 className="hero-title">Premium Medical Professionals</h1>
+          <h1 className="hero-title">Meet our Medical Professionals</h1>
           <p className="hero-subtitle">Connect with experienced healthcare specialists</p>
         </div>
         <div className="hero-decoration">
