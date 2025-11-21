@@ -7,7 +7,7 @@
 
 .doctor-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #d5dbea 0%, #e8f0fe 100%);
+  background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   padding-bottom: 60px;
 }
@@ -18,29 +18,22 @@
 .hero-section {
   padding: 60px 20px 50px;
   text-align: center;
-  background: linear-gradient(135deg, #84d3c7 0%, #ffffff 100%);
-  
+  background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
   border-bottom: 1px solid #e2e8f0;
 }
-
 
 .hero-content {
   max-width: 800px;
   margin: 0 auto;
-
- 
 }
 
 .hero-title {
   font-size: 3rem;
   font-weight: 700;
+  color: #1e293b !important;
   margin-bottom: 12px;
   letter-spacing: -0.5px;
-  color: #2d2a2a !important;  /* pure black */
-  text-shadow: 0 0 12px rgba(0, 0, 0, 0.45); /* stronger glow */
 }
-
-
 
 .hero-subtitle {
   font-size: 1.15rem;

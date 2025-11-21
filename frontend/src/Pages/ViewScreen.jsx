@@ -209,7 +209,7 @@ const ViewScreen = () => {
 
         <motion.div className="hero-content">
           <motion.h1 className="hero-title">
-            Book Your Doctor <br /> Appointment <br />
+            <span className="battle">Book Your Doctor <br /> Appointment <br /> </span>
             <span className="gradient-text">Online.</span>
           </motion.h1>
 

@@ -60,6 +60,9 @@ body {
   filter: drop-shadow(0 2px 8px rgba(102, 126, 234, 0.3));
 }
 
+.battle{
+  color: white;
+}
 .site-name {
   font-size: 28px;
   font-weight: 700;
