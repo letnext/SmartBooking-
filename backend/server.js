@@ -10,7 +10,22 @@ dotenv.config();
 const app = express();
 
 // 🟢 Middleware
-app.use(cors());
+const allowedOrigins = [
+  "http://localhost:5173/",
+  "https://smartappointmentbooking.netlify.app/",
+];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+  })
+);
 app.use(express.json()); // For JSON parsing
 
 // 🟢 Connect MongoDB
@@ -18,7 +33,7 @@ connectDB(); // <-- Just call it directly (we'll make sure it handles errors int
 
 // 🟢 Routes
 app.use("/api/auth", authRoutes);
-app.use("/api/appointments",bookingRoutes);
+app.use("/api/appointments", bookingRoutes);
 app.use("/api/doctors", doctorRoutes);
 
 // 🧠 Root route
