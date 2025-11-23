@@ -9,38 +9,37 @@ import doctorRoutes from "./routes/doctorRoutes.js";
 dotenv.config();
 const app = express();
 
-// 🟢 Middleware
-const allowedOrigins = [
-  "http://localhost:5173/",
-  "https://smartappointmentbooking.netlify.app/",
-];
-
+// 🟢 FIXED CORS
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
+    origin: [
+      "http://localhost:5173",
+      "https://smartappointmentbooking.netlify.app",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
   })
 );
-app.use(express.json()); // For JSON parsing
 
-// 🟢 Connect MongoDB
-connectDB(); // <-- Just call it directly (we'll make sure it handles errors internally)
+app.options("*", cors());
 
-// 🟢 Routes
+// JSON parsing
+app.use(express.json());
+
+// Connect MongoDB
+connectDB();
+
+// Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/appointments", bookingRoutes);
 app.use("/api/doctors", doctorRoutes);
 
-// 🧠 Root route
+// Test route
 app.get("/", (req, res) => {
   res.send("✅ Smart Booking API Running....!!!");
 });
 
-// 🟢 Start Server
+// Server start
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
