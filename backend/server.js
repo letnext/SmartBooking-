@@ -9,12 +9,13 @@ import doctorRoutes from "./routes/doctorRoutes.js";
 dotenv.config();
 const app = express();
 
-// 🟢 FIXED CORS
+// ✅ CORS FIX (ALL REQUIRED ORIGINS INCLUDED)
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",
-      "https://smartappointmentbooking.netlify.app",
+      "http://localhost:5173",                       // Local development
+      "https://smartappointmentbooking.netlify.app", // Your deployed frontend
+      "https://smartbooking-1.onrender.com"          // Your backend domain (Render)
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
@@ -22,9 +23,10 @@ app.use(
   })
 );
 
+// Allow OPTIONS for all routes
 app.options("*", cors());
 
-// JSON parsing
+// JSON Parsing
 app.use(express.json());
 
 // Connect MongoDB
@@ -35,11 +37,11 @@ app.use("/api/auth", authRoutes);
 app.use("/api/appointments", bookingRoutes);
 app.use("/api/doctors", doctorRoutes);
 
-// Test route
+// Test Route
 app.get("/", (req, res) => {
   res.send("✅ Smart Booking API Running....!!!");
 });
 
-// Server start
+// Start Server
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

@@ -21,7 +21,7 @@ const AppContent = () => {
 
   // ✅ Define routes where Navbar should NOT appear
   const hideNavbarRoutes = [
-    "/", // login
+    "/", 
     "/register",
     "/hospital-dashboard",
     "/admin-dashboard",
